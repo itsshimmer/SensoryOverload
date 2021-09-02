@@ -11,7 +11,7 @@ import SwiftUI
 struct SensoryOverloadApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HostingTabBar()
         }
     }
 }
