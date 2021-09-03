@@ -88,7 +88,7 @@ struct DeviceMotionView: View {
                 //MARK: - Sensors
                 SingleValueView(preText: "Heading", postText: "°", value: $heading)
                 XyzSensorView(title: "Gravity", xyzValues: $gravity)
-                XyzSensorView(title: "Attitude", xyzValues: $attitude)
+                XyzSensorView(title: "Attitude (pitch, yaw, roll)", xyzValues: $attitude)
                 XyzSensorView(title: "Magnetic Field", xyzValues: $magneticField)
                 XyzSensorView(title: "Rotation Rate", xyzValues: $rotationRate)
                 XyzSensorView(title: "User Acceleration", xyzValues: $userAcceleration)
