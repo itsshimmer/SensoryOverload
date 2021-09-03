@@ -6,6 +6,10 @@
 //
 
 import SwiftUI
+import CoreMotion
+
+// Creates a motion manager for all views
+let motionManager: CMMotionManager = CMMotionManager()
 
 struct HostingTabBar: View {
     

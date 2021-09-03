@@ -25,5 +25,6 @@ struct WelcomeView: View {
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
         WelcomeView()
+            .preferredColorScheme(.dark) // This is done for all subviews in HostingTabBar.swift
     }
 }

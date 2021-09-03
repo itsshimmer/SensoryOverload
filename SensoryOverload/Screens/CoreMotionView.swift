@@ -6,24 +6,20 @@
 //
 
 import SwiftUI
-import CoreMotion
 
-var motionManager: CMMotionManager!
-
+var coreMotionRefreshRate: Double = 1.0
 
 struct CoreMotionView: View {
     
-    @State var updateInterval: Double = 1
     @State var accelerometer: [Double] = [0.0, 0.0, 0.0]
-    @State var gyro: [Double] = [0.0, 0.0, 0.0]
+    @State var gyroscope: [Double] = [0.0, 0.0, 0.0]
     @State var magnetometer: [Double] = [0.0, 0.0, 0.0]
     
     func startCoreMotion() {
-        motionManager = CMMotionManager()
         
         // Starts Accelerometer
         if motionManager.isAccelerometerAvailable {
-            motionManager.accelerometerUpdateInterval = updateInterval
+            motionManager.accelerometerUpdateInterval = coreMotionRefreshRate
             motionManager.startAccelerometerUpdates(to: .main) { data, error in
                 guard let validData = data else { return }
                 var temp: [Double] = []
@@ -36,20 +32,20 @@ struct CoreMotionView: View {
         
         // Starts Gyro
         if motionManager.isGyroAvailable {
-            motionManager.gyroUpdateInterval = updateInterval
+            motionManager.gyroUpdateInterval = coreMotionRefreshRate
             motionManager.startGyroUpdates(to: .main) { data, error in
                 guard let validData = data else { return }
                 var temp: [Double] = []
                 temp.append(validData.rotationRate.x)
                 temp.append(validData.rotationRate.y)
                 temp.append(validData.rotationRate.z)
-                gyro = temp
+                gyroscope = temp
             }
         }
         
         // Starts Magnetometer
         if motionManager.isMagnetometerAvailable {
-            motionManager.magnetometerUpdateInterval = updateInterval
+            motionManager.magnetometerUpdateInterval = coreMotionRefreshRate
             motionManager.startMagnetometerUpdates(to: .main) { data, error in
                 guard let validData = data else { return }
                 var temp: [Double] = []
@@ -65,99 +61,31 @@ struct CoreMotionView: View {
         motionManager.stopAccelerometerUpdates()
         motionManager.stopGyroUpdates()
         motionManager.stopMagnetometerUpdates()
-        motionManager = nil
+    }
+    
+    func restartCoreMotion(newRefreshRate: Double) {
+        coreMotionRefreshRate = newRefreshRate
+        stopCoreMotion()
+        startCoreMotion()
     }
     
     var body: some View {
         ScrollView {
             VStack {
-                Text("Core Motion")
-                    .fontWeight(.black)
-                //MARK: - Group: Sensors
-                Group {
-                    Text("Accelerometer")
-                        .fontWeight(.bold)
-                        .padding()
-                    HStack {
-                        Spacer()
-                        Text("X: \(accelerometer[0])")
-                        Spacer()
-                        Text("Y: \(accelerometer[1])")
-                        Spacer()
-                        Text("Z: \(accelerometer[2])")
-                        Spacer()
-                    }
-                    Divider()
-                    Text("Gyroscope")
-                        .fontWeight(.bold)
-                        .padding()
-                    HStack {
-                        Spacer()
-                        Text("X: \(gyro[0])")
-                        Spacer()
-                        Text("Y: \(gyro[1])")
-                        Spacer()
-                        Text("Z: \(gyro[2])")
-                        Spacer()
-                    }
-                    Divider()
-                    Text("Magnetometer")
-                        .fontWeight(.bold)
-                        .padding()
-                    HStack {
-                        Spacer()
-                        Text("X: \(magnetometer[0])")
-                        Spacer()
-                        Text("Y: \(magnetometer[1])")
-                        Spacer()
-                        Text("Z: \(magnetometer[2])")
-                        Spacer()
-                    }
-                    Divider()
-                }
-                //MARK: - Group: Refresh rate settings
-                Group {
-                    HStack {
-                        Text("100Hz")
-                        Spacer()
-                        Text("Refresh Rate")
-                            .fontWeight(.bold)
-                        Spacer()
-                        Text("1Hz")
-                    }
-                    .padding(.top)
-                    Slider(value: $updateInterval, in: 1/100...1)
-                        .padding([.leading, .bottom, .trailing])
-                        .accentColor(.purple)
-                    Button(action: {
-                        stopCoreMotion()
-                        startCoreMotion()
-                    }, label: {
-                        ZStack {
-                            RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
-                                .foregroundColor(.purple)
-                            Text("Set refresh rate")
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
-                        }
-                        .padding(.horizontal)
-                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.05, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    })
-                    Divider()
-                        .padding()
-                }
-                //MARK: - Group: What is Core Motion?
-                Group {
-                    Text("What is Core Motion?")
-                        .fontWeight(.bold)
-                        .padding([.leading, .bottom, .trailing])
-                    Text("\"Core Motion reports motion and environment-related data from the onboard hardware of iOS devices, including from the accelerometers and gyroscopes, and from the pedometer, magnetometer, and barometer.\" - Apple Docs \n\n The values shown here are processed values by the Core Motion Apple Framework, so that bias induced by the environment is as supressed as possible.")
-                        .padding([.leading, .trailing])
-                        .fixedSize(horizontal: false, vertical: true)
-                }
+                TitleView(title: "Core Motion")
+                
+                //MARK: - Sensors
+                XyzSensorView(title: "Accelerometer", xyzValues: $accelerometer)
+                XyzSensorView(title: "Gyroscope", xyzValues: $gyroscope)
+                XyzSensorView(title: "Magnetometer", xyzValues: $magnetometer)
+                
+                //MARK: - Refresh rate settings
+                RefreshRateSelector(restartCoreMotion: restartCoreMotion(newRefreshRate:))
+                
+                //MARK: - What is Core Motion?
+                TextSectionView(title: "What is Core Motion?", text: "\"Core Motion reports motion and environment-related data from the onboard hardware of iOS devices, including from the accelerometers and gyroscopes, and from the pedometer, magnetometer, and barometer.\" - Apple Docs \n\n The values shown here are processed values by the Core Motion Apple Framework, so that bias induced by the environment is as supressed as possible.")
             }
         }
-        .foregroundColor(.white)
         .onAppear {
             startCoreMotion()
         }

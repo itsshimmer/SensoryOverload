@@ -16,5 +16,6 @@ struct RawDataView: View {
 struct RawDataView_Previews: PreviewProvider {
     static var previews: some View {
         RawDataView()
+            .preferredColorScheme(.dark) // This is done for all subviews in HostingTabBar.swift
     }
 }

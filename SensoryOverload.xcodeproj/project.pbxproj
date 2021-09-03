@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B425CECB26E1B4D600EA1808 /* DeviceMotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B425CECA26E1B4D600EA1808 /* DeviceMotionView.swift */; };
+		B44FDA6226E1BEDD003738AE /* RefreshRateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44FDA6126E1BEDD003738AE /* RefreshRateSelector.swift */; };
+		B49AE55E26E1C6BC00FD3FC1 /* XyzSensorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AE55D26E1C6BC00FD3FC1 /* XyzSensorView.swift */; };
+		B49AE56026E1C93000FD3FC1 /* TextSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AE55F26E1C93000FD3FC1 /* TextSectionView.swift */; };
+		B49AE56226E1C9C000FD3FC1 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AE56126E1C9C000FD3FC1 /* TitleView.swift */; };
+		B49AE56426E1CAA200FD3FC1 /* SingleValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AE56326E1CAA200FD3FC1 /* SingleValueView.swift */; };
 		B4EAA18526E1846E00CE7CE2 /* HostingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA18426E1846E00CE7CE2 /* HostingTabBar.swift */; };
 		B4EAA18826E187A400CE7CE2 /* RawDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA18726E187A400CE7CE2 /* RawDataView.swift */; };
 		B4EAA18A26E187BC00CE7CE2 /* CoreMotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA18926E187BC00CE7CE2 /* CoreMotionView.swift */; };
-		B4EAA18C26E1890200CE7CE2 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA18B26E1890200CE7CE2 /* AboutView.swift */; };
 		B4F4F99726E180040065A2E7 /* SensoryOverloadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F4F99626E180040065A2E7 /* SensoryOverloadApp.swift */; };
 		B4F4F99926E180040065A2E7 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F4F99826E180040065A2E7 /* WelcomeView.swift */; };
 		B4F4F99B26E180050065A2E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4F4F99A26E180050065A2E7 /* Assets.xcassets */; };
@@ -20,10 +24,14 @@
 
 /* Begin PBXFileReference section */
 		B425CECA26E1B4D600EA1808 /* DeviceMotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMotionView.swift; sourceTree = "<group>"; };
+		B44FDA6126E1BEDD003738AE /* RefreshRateSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshRateSelector.swift; sourceTree = "<group>"; };
+		B49AE55D26E1C6BC00FD3FC1 /* XyzSensorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XyzSensorView.swift; sourceTree = "<group>"; };
+		B49AE55F26E1C93000FD3FC1 /* TextSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSectionView.swift; sourceTree = "<group>"; };
+		B49AE56126E1C9C000FD3FC1 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		B49AE56326E1CAA200FD3FC1 /* SingleValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleValueView.swift; sourceTree = "<group>"; };
 		B4EAA18426E1846E00CE7CE2 /* HostingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingTabBar.swift; sourceTree = "<group>"; };
 		B4EAA18726E187A400CE7CE2 /* RawDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawDataView.swift; sourceTree = "<group>"; };
 		B4EAA18926E187BC00CE7CE2 /* CoreMotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionView.swift; sourceTree = "<group>"; };
-		B4EAA18B26E1890200CE7CE2 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		B4F4F99326E180040065A2E7 /* SensoryOverload.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensoryOverload.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F4F99626E180040065A2E7 /* SensoryOverloadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensoryOverloadApp.swift; sourceTree = "<group>"; };
 		B4F4F99826E180040065A2E7 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -43,6 +51,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B44FDA6026E1BED0003738AE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B49AE56126E1C9C000FD3FC1 /* TitleView.swift */,
+				B49AE55D26E1C6BC00FD3FC1 /* XyzSensorView.swift */,
+				B49AE56326E1CAA200FD3FC1 /* SingleValueView.swift */,
+				B44FDA6126E1BEDD003738AE /* RefreshRateSelector.swift */,
+				B49AE55F26E1C93000FD3FC1 /* TextSectionView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		B4EAA18626E1858300CE7CE2 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -51,7 +71,6 @@
 				B4EAA18726E187A400CE7CE2 /* RawDataView.swift */,
 				B4EAA18926E187BC00CE7CE2 /* CoreMotionView.swift */,
 				B425CECA26E1B4D600EA1808 /* DeviceMotionView.swift */,
-				B4EAA18B26E1890200CE7CE2 /* AboutView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -75,6 +94,7 @@
 		B4F4F99526E180040065A2E7 /* SensoryOverload */ = {
 			isa = PBXGroup;
 			children = (
+				B44FDA6026E1BED0003738AE /* Components */,
 				B4EAA18626E1858300CE7CE2 /* Screens */,
 				B4F4F99626E180040065A2E7 /* SensoryOverloadApp.swift */,
 				B4F4F99A26E180050065A2E7 /* Assets.xcassets */,
@@ -161,12 +181,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B44FDA6226E1BEDD003738AE /* RefreshRateSelector.swift in Sources */,
 				B4F4F99926E180040065A2E7 /* WelcomeView.swift in Sources */,
+				B49AE55E26E1C6BC00FD3FC1 /* XyzSensorView.swift in Sources */,
 				B4EAA18A26E187BC00CE7CE2 /* CoreMotionView.swift in Sources */,
 				B425CECB26E1B4D600EA1808 /* DeviceMotionView.swift in Sources */,
 				B4EAA18526E1846E00CE7CE2 /* HostingTabBar.swift in Sources */,
+				B49AE56426E1CAA200FD3FC1 /* SingleValueView.swift in Sources */,
 				B4F4F99726E180040065A2E7 /* SensoryOverloadApp.swift in Sources */,
-				B4EAA18C26E1890200CE7CE2 /* AboutView.swift in Sources */,
+				B49AE56026E1C93000FD3FC1 /* TextSectionView.swift in Sources */,
+				B49AE56226E1C9C000FD3FC1 /* TitleView.swift in Sources */,
 				B4EAA18826E187A400CE7CE2 /* RawDataView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
