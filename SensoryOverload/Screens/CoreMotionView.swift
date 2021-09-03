@@ -145,8 +145,8 @@ struct CoreMotionView: View {
             Text("What is Core Motion?")
                 .fontWeight(.bold)
                 .padding([.leading, .bottom, .trailing])
-            Text("Many services of this framework let you access both the raw values recorded by the hardware and a processed version of those values. Processed values do not include forms of bias that might adversely affect how you use that data. For example, a processed accelerometer value reflects only the acceleration caused by the user and not the acceleration caused by gravity.")
-                .padding()
+            Text("\"Core Motion reports motion and environment-related data from the onboard hardware of iOS devices, including from the accelerometers and gyroscopes, and from the pedometer, magnetometer, and barometer.\" - Apple Docs \n The values shown here are processed values from those sensors, so that bias induced by the environment is as supressed as possible.")
+                .padding([.leading, .bottom, .trailing])
             Spacer()
         }
         .foregroundColor(.white)
