@@ -15,7 +15,6 @@ struct HostingTabBar: View {
     
     private enum Tab: Hashable {
         case welcome
-        case rawdata
         case coremotion
         case devicemotion
     }
@@ -30,20 +29,14 @@ struct HostingTabBar: View {
                     Text("Welcome")
                     Image(systemName: "house.fill")
                 }
-            RawDataView()
+            CoreMotionView()
                 .tag(1)
                 .tabItem {
-                    Text("Raw Data")
-                    Image(systemName: "magnifyingglass")
-                }
-            CoreMotionView()
-                .tag(2)
-                .tabItem {
                     Text("Core Motion")
-                    Image(systemName: "applelogo")
+                    Image(systemName: "arrow.up.and.down.and.arrow.left.and.right")
                 }
             DeviceMotionView()
-                .tag(3)
+                .tag(2)
                 .tabItem {
                     Text("Device Motion")
                     Image(systemName: "move.3d")

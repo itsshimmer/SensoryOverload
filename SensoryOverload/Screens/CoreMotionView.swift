@@ -83,7 +83,7 @@ struct CoreMotionView: View {
                 RefreshRateSelector(restartCoreMotion: restartCoreMotion(newRefreshRate:))
                 
                 //MARK: - What is Core Motion?
-                TextSectionView(title: "What is Core Motion?", text: "\"Core Motion reports motion and environment-related data from the onboard hardware of iOS devices, including from the accelerometers and gyroscopes, and from the pedometer, magnetometer, and barometer.\" - Apple Docs \n\n The values shown here are processed values by the Core Motion Apple Framework, so that bias induced by the environment is as supressed as possible.")
+                TextSectionView(title: "What is Core Motion?", text: "\"Core Motion reports motion and environment-related data from the onboard hardware of iOS devices, including from the accelerometers and gyroscopes, and from the pedometer, magnetometer, and barometer.\" - Apple Docs \n\n The values shown here are the raw values obtainable from the sensors.")
             }
         }
         .onAppear {
