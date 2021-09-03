@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B425CECB26E1B4D600EA1808 /* DeviceMotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B425CECA26E1B4D600EA1808 /* DeviceMotionView.swift */; };
 		B4EAA18526E1846E00CE7CE2 /* HostingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA18426E1846E00CE7CE2 /* HostingTabBar.swift */; };
 		B4EAA18826E187A400CE7CE2 /* RawDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA18726E187A400CE7CE2 /* RawDataView.swift */; };
 		B4EAA18A26E187BC00CE7CE2 /* CoreMotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA18926E187BC00CE7CE2 /* CoreMotionView.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B425CECA26E1B4D600EA1808 /* DeviceMotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMotionView.swift; sourceTree = "<group>"; };
 		B4EAA18426E1846E00CE7CE2 /* HostingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingTabBar.swift; sourceTree = "<group>"; };
 		B4EAA18726E187A400CE7CE2 /* RawDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawDataView.swift; sourceTree = "<group>"; };
 		B4EAA18926E187BC00CE7CE2 /* CoreMotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionView.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 				B4F4F99826E180040065A2E7 /* WelcomeView.swift */,
 				B4EAA18726E187A400CE7CE2 /* RawDataView.swift */,
 				B4EAA18926E187BC00CE7CE2 /* CoreMotionView.swift */,
+				B425CECA26E1B4D600EA1808 /* DeviceMotionView.swift */,
 				B4EAA18B26E1890200CE7CE2 /* AboutView.swift */,
 			);
 			path = Screens;
@@ -160,6 +163,7 @@
 			files = (
 				B4F4F99926E180040065A2E7 /* WelcomeView.swift in Sources */,
 				B4EAA18A26E187BC00CE7CE2 /* CoreMotionView.swift in Sources */,
+				B425CECB26E1B4D600EA1808 /* DeviceMotionView.swift in Sources */,
 				B4EAA18526E1846E00CE7CE2 /* HostingTabBar.swift in Sources */,
 				B4F4F99726E180040065A2E7 /* SensoryOverloadApp.swift in Sources */,
 				B4EAA18C26E1890200CE7CE2 /* AboutView.swift in Sources */,

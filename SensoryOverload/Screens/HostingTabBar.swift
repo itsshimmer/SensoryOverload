@@ -13,7 +13,7 @@ struct HostingTabBar: View {
         case welcome
         case rawdata
         case coremotion
-        case about
+        case devicemotion
     }
     
     @State private var selectedTab: Tab = .welcome
@@ -36,13 +36,13 @@ struct HostingTabBar: View {
                 .tag(2)
                 .tabItem {
                     Text("Core Motion")
-                    Image(systemName: "person.crop.circle")
+                    Image(systemName: "applelogo")
                 }
-            AboutView()
+            DeviceMotionView()
                 .tag(3)
                 .tabItem {
-                    Text("About")
-                    Image(systemName: "gear")
+                    Text("Device Motion")
+                    Image(systemName: "move.3d")
                 }
         }
         .accentColor(.purple)
