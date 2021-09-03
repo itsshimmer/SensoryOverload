@@ -69,94 +69,95 @@ struct CoreMotionView: View {
     }
     
     var body: some View {
-        VStack {
+        ScrollView {
             VStack {
-                Text("Core Motion")
-                    .fontWeight(.black)
-                Text("Accelerometer")
-                    .fontWeight(.bold)
-                    .padding()
-                HStack {
-                    Spacer()
-                    Text("X: \(accelerometer[0])")
-                    Spacer()
-                    Text("Y: \(accelerometer[1])")
-                    Spacer()
-                    Text("Z: \(accelerometer[2])")
-                    Spacer()
-                }
-                Divider()
-                Text("Gyro")
-                    .fontWeight(.bold)
-                    .padding()
-                HStack {
-                    Spacer()
-                    Text("X: \(gyro[0])")
-                    Spacer()
-                    Text("Y: \(gyro[1])")
-                    Spacer()
-                    Text("Z: \(gyro[2])")
-                    Spacer()
-                }
-                Divider()
-                Text("Magnetometer")
-                    .fontWeight(.bold)
-                    .padding()
-                HStack {
-                    Spacer()
-                    Text("X: \(magnetometer[0])")
-                    Spacer()
-                    Text("Y: \(magnetometer[1])")
-                    Spacer()
-                    Text("Z: \(magnetometer[2])")
-                    Spacer()
-                }
-            }
-            Divider()
-            //MARK: - Update interval slider
-            HStack {
-                Text("100Hz")
-                Spacer()
-                Text("Update interval")
-                    .fontWeight(.bold)
-                Spacer()
-                Text("1Hz")
-            }
-            .padding(.top)
-            Slider(value: $updateInterval, in: 1/100...1)
-                .padding([.leading, .bottom, .trailing])
-                .accentColor(.purple)
-            Button(action: {
-                stopCoreMotion()
-                startCoreMotion()
-            }, label: {
-                ZStack {
-                    RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
-                        .foregroundColor(.purple)
-                    Text("Set refresh rate")
-                        .foregroundColor(.white)
+                VStack {
+                    Text("Core Motion")
+                        .fontWeight(.black)
+                    Text("Accelerometer")
                         .fontWeight(.bold)
+                        .padding()
+                    HStack {
+                        Spacer()
+                        Text("X: \(accelerometer[0])")
+                        Spacer()
+                        Text("Y: \(accelerometer[1])")
+                        Spacer()
+                        Text("Z: \(accelerometer[2])")
+                        Spacer()
+                    }
+                    Divider()
+                    Text("Gyro")
+                        .fontWeight(.bold)
+                        .padding()
+                    HStack {
+                        Spacer()
+                        Text("X: \(gyro[0])")
+                        Spacer()
+                        Text("Y: \(gyro[1])")
+                        Spacer()
+                        Text("Z: \(gyro[2])")
+                        Spacer()
+                    }
+                    Divider()
+                    Text("Magnetometer")
+                        .fontWeight(.bold)
+                        .padding()
+                    HStack {
+                        Spacer()
+                        Text("X: \(magnetometer[0])")
+                        Spacer()
+                        Text("Y: \(magnetometer[1])")
+                        Spacer()
+                        Text("Z: \(magnetometer[2])")
+                        Spacer()
+                    }
                 }
-                .padding(.horizontal)
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.05, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            })
-            Divider()
-                .padding()
-            Text("What is Core Motion?")
-                .fontWeight(.bold)
-                .padding([.leading, .bottom, .trailing])
-            Text("\"Core Motion reports motion and environment-related data from the onboard hardware of iOS devices, including from the accelerometers and gyroscopes, and from the pedometer, magnetometer, and barometer.\" - Apple Docs \n The values shown here are processed values from those sensors, so that bias induced by the environment is as supressed as possible.")
-                .padding([.leading, .bottom, .trailing])
-            Spacer()
-        }
-        .foregroundColor(.white)
-        .onAppear {
-            print("Core Motion selected")
-            startCoreMotion()
-        }
-        .onDisappear {
-            print("Core Motion deselected")
-            stopCoreMotion()
+                Divider()
+                //MARK: - Update interval slider
+                HStack {
+                    Text("100Hz")
+                    Spacer()
+                    Text("Update interval")
+                        .fontWeight(.bold)
+                    Spacer()
+                    Text("1Hz")
+                }
+                .padding(.top)
+                Slider(value: $updateInterval, in: 1/100...1)
+                    .padding([.leading, .bottom, .trailing])
+                    .accentColor(.purple)
+                Button(action: {
+                    stopCoreMotion()
+                    startCoreMotion()
+                }, label: {
+                    ZStack {
+                        RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
+                            .foregroundColor(.purple)
+                        Text("Set refresh rate")
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                    }
+                    .padding(.horizontal)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.05, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                })
+                Divider()
+                    .padding()
+                Text("What is Core Motion?")
+                    .fontWeight(.bold)
+                    .padding([.leading, .bottom, .trailing])
+                Text("\"Core Motion reports motion and environment-related data from the onboard hardware of iOS devices, including from the accelerometers and gyroscopes, and from the pedometer, magnetometer, and barometer.\" - Apple Docs \n\n The values shown here are processed values by the Core Motion Apple API, so that bias induced by the environment is as supressed as possible.")
+                    .padding([.leading, .trailing])
+                    .fixedSize(horizontal: false, vertical: true)
+                Spacer()
+            }
+            .foregroundColor(.white)
+            .onAppear {
+                startCoreMotion()
+            }
+            .onDisappear {
+                //stopCoreMotion()
+            }
         }
     }
 }
