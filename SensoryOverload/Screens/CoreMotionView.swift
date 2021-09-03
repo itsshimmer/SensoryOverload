@@ -88,7 +88,7 @@ struct CoreMotionView: View {
                         Spacer()
                     }
                     Divider()
-                    Text("Gyro")
+                    Text("Gyroscope")
                         .fontWeight(.bold)
                         .padding()
                     HStack {
