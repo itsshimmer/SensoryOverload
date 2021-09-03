@@ -46,7 +46,7 @@ struct HostingTabBar: View {
                 }
         }
         .accentColor(.purple)
-        .preferredColorScheme(.dark)
+        .colorScheme(.dark)
     }
 }
 

@@ -41,7 +41,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B4EAA18626E1858300CE7CE2 /* Views */ = {
+		B4EAA18626E1858300CE7CE2 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				B4EAA18426E1846E00CE7CE2 /* HostingTabBar.swift */,
@@ -50,7 +50,7 @@
 				B4EAA18926E187BC00CE7CE2 /* CoreMotionView.swift */,
 				B4EAA18B26E1890200CE7CE2 /* AboutView.swift */,
 			);
-			path = Views;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		B4F4F98A26E180040065A2E7 = {
@@ -72,7 +72,7 @@
 		B4F4F99526E180040065A2E7 /* SensoryOverload */ = {
 			isa = PBXGroup;
 			children = (
-				B4EAA18626E1858300CE7CE2 /* Views */,
+				B4EAA18626E1858300CE7CE2 /* Screens */,
 				B4F4F99626E180040065A2E7 /* SensoryOverloadApp.swift */,
 				B4F4F99A26E180050065A2E7 /* Assets.xcassets */,
 				B4F4F99F26E180050065A2E7 /* Info.plist */,
